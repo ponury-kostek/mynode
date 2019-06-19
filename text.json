@@ -1,13 +1,11 @@
 [
   {
-    "1": {
-      "tekst": "Dobra zupa nie jest zła"
-    },
-    "2": {
-      "tekst": "Milczenie jest złotem"
-    },
-    "3": {
-      "tekst": "Morda to nie szklanka - szklanki nie ogolisz."
-    }
+    "tekst": "Dobra zupa nie jest zła"
+  },
+  {
+    "tekst": "Milczenie jest złotem"
+  },
+  {
+    "tekst": "Morda to nie szklanka - szklanki nie ogolisz."
   }
 ]
