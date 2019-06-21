@@ -12,17 +12,21 @@ function getFile(c) {
 
 }
 let tmp;
+let i = 0;
 getFile(function(error, data) {
     tmp = data;
-    console.log(tmp);
+    server.listen(port, hostname, () => {
+        console.log(`Server running at http://${hostname}:${port}/`);
+    });
 })
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
-    res.end(tmp[0].tekst.buffer.toString('utf8'));
 
+    console.log(i);
+    res.end(tmp[i].tekst);
+    i++;
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+
+
