@@ -11,6 +11,17 @@ load_fortunes((err, fortunes) => {
 	let counter = 0;
 	const fortunes_length = fortunes.length;
 	const server = http.createServer((req, res) => {
+		// verify request method (allow GET only)
+		if (req.method !== "GET") {
+			res.statusCode = 405;
+			res.setHeader("Allow", "GET");
+			return res.end();
+		}
+		// verify request url (allow "/" only)
+		if(req.url !== "/") {
+			res.statusCode = 404;
+			return res.end();
+		}
 		counter += 1;
 		const fortune = fortunes[counter % fortunes_length];
 		res.statusCode = 200;
