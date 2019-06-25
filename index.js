@@ -22,8 +22,9 @@ getFile(function(error, data) {
 const server = http.createServer((req, res) => {
     if(i == 3) i = 0;
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    console.log(i);
-    var ress = Buffer.from(tmp[i++].tekst, 'ascii');
-    res.end(ress.toString('utf8'));
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.end(tmp[i].tekst);
+    if(req.method) {
+        i++;
+    }
 });
